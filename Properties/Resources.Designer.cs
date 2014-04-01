@@ -79,5 +79,16 @@ namespace Tomato.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;log&gt;
+        ///&lt;/log&gt;.
+        /// </summary>
+        internal static string logging_template_xml {
+            get {
+                return ResourceManager.GetString("logging_template_xml", resourceCulture);
+            }
+        }
     }
 }

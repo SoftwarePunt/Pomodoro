@@ -44,6 +44,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slbCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.slbBreakInfo = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsLogLink = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -160,7 +162,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.slbCount,
-            this.slbBreakInfo});
+            this.slbBreakInfo,
+            this.toolStripStatusLabel2,
+            this.tsLogLink});
             this.statusStrip1.Location = new System.Drawing.Point(0, 435);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(525, 24);
@@ -169,9 +173,9 @@
             // 
             // slbCount
             // 
-            this.slbCount.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.slbCount.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
+                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
+                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.slbCount.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.slbCount.Name = "slbCount";
             this.slbCount.Size = new System.Drawing.Size(122, 19);
@@ -179,13 +183,28 @@
             // 
             // slbBreakInfo
             // 
-            this.slbBreakInfo.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.slbBreakInfo.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
+                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
+                        | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.slbBreakInfo.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.slbBreakInfo.Name = "slbBreakInfo";
             this.slbBreakInfo.Size = new System.Drawing.Size(122, 19);
             this.slbBreakInfo.Text = "toolStripStatusLabel1";
+            // 
+            // tsLogLink
+            // 
+            this.tsLogLink.IsLink = true;
+            this.tsLogLink.Name = "tsLogLink";
+            this.tsLogLink.Size = new System.Drawing.Size(56, 19);
+            this.tsLogLink.Text = "Open log";
+            this.tsLogLink.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tsLogLink.Click += new System.EventHandler(this.tsLogLink_Click);
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(179, 19);
+            this.toolStripStatusLabel2.Spring = true;
             // 
             // Form1
             // 
@@ -230,6 +249,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel slbCount;
         private System.Windows.Forms.ToolStripStatusLabel slbBreakInfo;
+        private System.Windows.Forms.ToolStripStatusLabel tsLogLink;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
     }
 }
 

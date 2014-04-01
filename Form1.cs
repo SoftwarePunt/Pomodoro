@@ -2,8 +2,8 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Xml;
 using Tomato.Properties;
+using System.Diagnostics;
 
 namespace Tomato
 {
@@ -127,8 +127,7 @@ namespace Tomato
 
             goal = d.Input;
 
-            
-            addToXml(goal, DateTime.Now);
+            Logging.WriteActivityLog(goal, DateTime.Now);
             pomoNotif("Starting work" + (String.IsNullOrWhiteSpace(goal) ? "" : ": " + goal));
             return true;
         }
@@ -240,28 +239,7 @@ namespace Tomato
             }));
         }
 
-        private void addToXml(String activity, DateTime time)
-        {
-            XmlDocument document = new XmlDocument();
-            String currentDirectory = Environment.CurrentDirectory;
-            document.Load(currentDirectory + "\\log.xml");
-
-            XmlElement activityElement = document.CreateElement("Activity");
-
-            XmlElement descriptionElement = document.CreateElement("Description");
-            descriptionElement.InnerText = activity;
-
-            XmlElement timeElement = document.CreateElement("StartTime");
-            timeElement.InnerText = time.ToString();
-
-            activityElement.AppendChild(timeElement);
-            activityElement.AppendChild(descriptionElement);
-
-            XmlNode rootElement = document.GetElementsByTagName("log")[0];
-            rootElement.AppendChild(activityElement);
-
-            document.Save("log.xml");
-        }
+        
 
         private void setTimer(int secs, bool traytext = false)
         {
@@ -350,6 +328,20 @@ namespace Tomato
 
                     break;
             }
+        }
+
+        private void tsLogLink_Click(object sender, EventArgs e)
+        {
+            if (!Logging.FileExists)
+            {
+                Logging.CreateFileFromTemplate();
+            }
+
+            try
+            {
+                Process.Start(Logging.FilePath);
+            }
+            catch (Exception) { }
         }
     }
 }
