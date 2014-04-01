@@ -17,9 +17,14 @@ namespace Tomato
 
         private static void PlayAlarm(string alarmId)
         {
-            String currentDirectory = Environment.CurrentDirectory;
-            SoundPlayer simpleSound = new SoundPlayer(currentDirectory + "\\Alarm05_converted.wav");
-            simpleSound.Play();
+            string currentDirectory = Environment.CurrentDirectory;
+
+            try
+            {
+                SoundPlayer simpleSound = new SoundPlayer(currentDirectory + "\\alarm.wav");
+                simpleSound.Play();
+            }
+            catch (Exception) { }
         }
     }
 }

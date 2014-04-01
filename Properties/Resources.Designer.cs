@@ -61,26 +61,6 @@ namespace Tomato.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1353161228_Tomato {
-            get {
-                object obj = ResourceManager.GetObject("1353161228_Tomato", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon _1353161231_Tomato {
-            get {
-                object obj = ResourceManager.GetObject("_1353161231_Tomato", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;log&gt;
         ///&lt;/log&gt;.
@@ -88,6 +68,26 @@ namespace Tomato.Properties {
         internal static string logging_template_xml {
             get {
                 return ResourceManager.GetString("logging_template_xml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pomodoro {
+            get {
+                object obj = ResourceManager.GetObject("pomodoro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon pomodoro_icon {
+            get {
+                object obj = ResourceManager.GetObject("pomodoro_icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

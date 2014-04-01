@@ -41,7 +41,7 @@ namespace Tomato
         void Form1_Load(object sender, EventArgs e)
         {
             tray = new NotifyIcon();
-            tray.Icon = Resources._1353161231_Tomato;
+            tray.Icon = Resources.pomodoro_icon;
             tray.Text = "Pomodoro";
             tray.ContextMenuStrip = contextMenuStrip1;
             tray.Visible = true;

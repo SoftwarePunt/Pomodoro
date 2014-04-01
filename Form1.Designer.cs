@@ -68,7 +68,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Tomato.Properties.Resources._1353161228_Tomato;
+            this.pictureBox1.BackgroundImage = global::Tomato.Properties.Resources.pomodoro;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Location = new System.Drawing.Point(0, 42);
