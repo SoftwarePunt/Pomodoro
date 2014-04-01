@@ -22,29 +22,44 @@ namespace Tomato
 
         private void DoEvents()
         {
-            while (true)
+            try
             {
-                var start = DateTime.Now.Ticks;
-
-                if (Enabled)
+                while (true)
                 {
-                    if (Tick != null)
+                    var start = DateTime.Now.Ticks;
+
+                    if (Enabled)
                     {
-                        Tick.Invoke(null, null);
+                        if (Tick != null)
+                        {
+                            Tick.Invoke(null, null);
+                        }
                     }
+
+                    var end = DateTime.Now.Ticks;
+                    var spent = new TimeSpan(end - start).Ticks;
+
+                    var sleepTime = (int)(SLEEP_TIME - spent / TimeSpan.TicksPerMillisecond);
+
+                    if (sleepTime <= 0)
+                    {
+                        continue;
+                    }
+
+                    Thread.Sleep(sleepTime);
                 }
+            }
+            catch (ThreadAbortException) { }
+        }
 
-                var end = DateTime.Now.Ticks;
-                var spent = new TimeSpan(end - start).Ticks;
+        public void Abort()
+        {
+            this.Enabled = false;
 
-                var sleepTime = (int)(SLEEP_TIME - spent / TimeSpan.TicksPerMillisecond);
-
-                if (sleepTime <= 0)
-                {
-                    continue;
-                }
-
-                Thread.Sleep(sleepTime);
+            if (innerThread != null)
+            {
+                innerThread.Abort();
+                innerThread = null;
             }
         }
     }

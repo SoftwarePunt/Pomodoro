@@ -109,6 +109,10 @@ namespace Tomato
                 this.Hide();
                 pomoNotif("Pomodoro has been minimized to your tray and is, in fact, still running.");
             }
+            else
+            {
+                this.clockTimer.Abort();
+            }
         }
 
         private void clockTimer_Tick(object sender, EventArgs e)
@@ -314,7 +318,7 @@ namespace Tomato
                 case Activity.BreakShort:
 
                     pauseClock = 0;
-                        redata();
+                    redata();
                     break;
 
                 case Activity.Working:
