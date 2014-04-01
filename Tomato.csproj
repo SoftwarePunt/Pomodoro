@@ -101,9 +101,7 @@
     <None Include="Resources\pomodoro.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Alarm05_converted.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="alarm.wav" />
     <Content Include="pomodoro.ico" />
     <None Include="Resources\pomodoro.ico" />
   </ItemGroup>
